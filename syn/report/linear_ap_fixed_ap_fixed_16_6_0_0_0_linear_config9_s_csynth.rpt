@@ -1,0 +1,178 @@
+
+
+================================================================
+== Vivado HLS Report for 'linear_ap_fixed_ap_fixed_16_6_0_0_0_linear_config9_s'
+================================================================
+* Date:           Tue Jun  1 19:11:45 2021
+
+* Version:        2020.1.1 (Build 2951007 on Wed Aug 05 23:24:06 MDT 2020)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: virtexuplus
+* Target device:  xcu250-figd2104-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  | 5.00 ns |   0 ns   |   0.62 ns  |
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        0|        0|   0 ns   |   0 ns   |    1|    1| function |
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+-------+---------+---------+------+
+|         Name        | BRAM_18K| DSP48E|    FF   |   LUT   | URAM |
++---------------------+---------+-------+---------+---------+------+
+|DSP                  |        -|      -|        -|        -|     -|
+|Expression           |        -|      -|        0|        2|     -|
+|FIFO                 |        -|      -|        -|        -|     -|
+|Instance             |        -|      -|        -|        -|     -|
+|Memory               |        -|      -|        -|        -|     -|
+|Multiplexer          |        -|      -|        -|       99|     -|
+|Register             |        -|      -|       92|        -|     -|
++---------------------+---------+-------+---------+---------+------+
+|Total                |        0|      0|       92|      101|     0|
++---------------------+---------+-------+---------+---------+------+
+|Available SLR        |     1344|   3072|   864000|   432000|   320|
++---------------------+---------+-------+---------+---------+------+
+|Utilization SLR (%)  |        0|      0|    ~0   |    ~0   |     0|
++---------------------+---------+-------+---------+---------+------+
+|Available            |     5376|  12288|  3456000|  1728000|  1280|
++---------------------+---------+-------+---------+---------+------+
+|Utilization (%)      |        0|      0|    ~0   |    ~0   |     0|
++---------------------+---------+-------+---------+---------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+-------+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |ap_block_state1  |    or    |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |Total            |          |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------+----+-----------+-----+-----------+
+    |   Name  | LUT| Input Size| Bits| Total Bits|
+    +---------+----+-----------+-----+-----------+
+    |ap_done  |   9|          2|    1|          2|
+    |res_0_V  |   9|          2|    9|         18|
+    |res_1_V  |   9|          2|    9|         18|
+    |res_2_V  |   9|          2|    9|         18|
+    |res_3_V  |   9|          2|    9|         18|
+    |res_4_V  |   9|          2|    9|         18|
+    |res_5_V  |   9|          2|    9|         18|
+    |res_6_V  |   9|          2|    9|         18|
+    |res_7_V  |   9|          2|    9|         18|
+    |res_8_V  |   9|          2|    9|         18|
+    |res_9_V  |   9|          2|    9|         18|
+    +---------+----+-----------+-----+-----------+
+    |Total    |  99|         22|   91|        182|
+    +---------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------+---+----+-----+-----------+
+    |     Name     | FF| LUT| Bits| Const Bits|
+    +--------------+---+----+-----+-----------+
+    |ap_CS_fsm     |  1|   0|    1|          0|
+    |ap_done_reg   |  1|   0|    1|          0|
+    |res_0_V_preg  |  9|   0|   16|          7|
+    |res_1_V_preg  |  9|   0|   16|          7|
+    |res_2_V_preg  |  9|   0|   16|          7|
+    |res_3_V_preg  |  9|   0|   16|          7|
+    |res_4_V_preg  |  9|   0|   16|          7|
+    |res_5_V_preg  |  9|   0|   16|          7|
+    |res_6_V_preg  |  9|   0|   16|          7|
+    |res_7_V_preg  |  9|   0|   16|          7|
+    |res_8_V_preg  |  9|   0|   16|          7|
+    |res_9_V_preg  |  9|   0|   16|          7|
+    +--------------+---+----+-----+-----------+
+    |Total         | 92|   0|  162|         70|
+    +--------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+------------------------------------------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |                     Source Object                    |    C Type    |
++----------------+-----+-----+------------+------------------------------------------------------+--------------+
+|ap_clk          |  in |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<16,6,0,0,0>,linear_config9> | return value |
+|ap_rst          |  in |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<16,6,0,0,0>,linear_config9> | return value |
+|ap_start        |  in |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<16,6,0,0,0>,linear_config9> | return value |
+|ap_done         | out |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<16,6,0,0,0>,linear_config9> | return value |
+|ap_continue     |  in |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<16,6,0,0,0>,linear_config9> | return value |
+|ap_idle         | out |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<16,6,0,0,0>,linear_config9> | return value |
+|ap_ready        | out |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<16,6,0,0,0>,linear_config9> | return value |
+|data_0_V        |  in |    9|   ap_none  |                       data_0_V                       |    pointer   |
+|data_1_V        |  in |    9|   ap_none  |                       data_1_V                       |    pointer   |
+|data_2_V        |  in |    9|   ap_none  |                       data_2_V                       |    pointer   |
+|data_3_V        |  in |    9|   ap_none  |                       data_3_V                       |    pointer   |
+|data_4_V        |  in |    9|   ap_none  |                       data_4_V                       |    pointer   |
+|data_5_V        |  in |    9|   ap_none  |                       data_5_V                       |    pointer   |
+|data_6_V        |  in |    9|   ap_none  |                       data_6_V                       |    pointer   |
+|data_7_V        |  in |    9|   ap_none  |                       data_7_V                       |    pointer   |
+|data_8_V        |  in |    9|   ap_none  |                       data_8_V                       |    pointer   |
+|data_9_V        |  in |    9|   ap_none  |                       data_9_V                       |    pointer   |
+|res_0_V         | out |   16|   ap_vld   |                        res_0_V                       |    pointer   |
+|res_0_V_ap_vld  | out |    1|   ap_vld   |                        res_0_V                       |    pointer   |
+|res_1_V         | out |   16|   ap_vld   |                        res_1_V                       |    pointer   |
+|res_1_V_ap_vld  | out |    1|   ap_vld   |                        res_1_V                       |    pointer   |
+|res_2_V         | out |   16|   ap_vld   |                        res_2_V                       |    pointer   |
+|res_2_V_ap_vld  | out |    1|   ap_vld   |                        res_2_V                       |    pointer   |
+|res_3_V         | out |   16|   ap_vld   |                        res_3_V                       |    pointer   |
+|res_3_V_ap_vld  | out |    1|   ap_vld   |                        res_3_V                       |    pointer   |
+|res_4_V         | out |   16|   ap_vld   |                        res_4_V                       |    pointer   |
+|res_4_V_ap_vld  | out |    1|   ap_vld   |                        res_4_V                       |    pointer   |
+|res_5_V         | out |   16|   ap_vld   |                        res_5_V                       |    pointer   |
+|res_5_V_ap_vld  | out |    1|   ap_vld   |                        res_5_V                       |    pointer   |
+|res_6_V         | out |   16|   ap_vld   |                        res_6_V                       |    pointer   |
+|res_6_V_ap_vld  | out |    1|   ap_vld   |                        res_6_V                       |    pointer   |
+|res_7_V         | out |   16|   ap_vld   |                        res_7_V                       |    pointer   |
+|res_7_V_ap_vld  | out |    1|   ap_vld   |                        res_7_V                       |    pointer   |
+|res_8_V         | out |   16|   ap_vld   |                        res_8_V                       |    pointer   |
+|res_8_V_ap_vld  | out |    1|   ap_vld   |                        res_8_V                       |    pointer   |
+|res_9_V         | out |   16|   ap_vld   |                        res_9_V                       |    pointer   |
+|res_9_V_ap_vld  | out |    1|   ap_vld   |                        res_9_V                       |    pointer   |
++----------------+-----+-----+------------+------------------------------------------------------+--------------+
+
